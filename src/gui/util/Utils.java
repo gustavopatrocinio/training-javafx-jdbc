@@ -6,18 +6,17 @@ import javafx.stage.Stage;
 
 public class Utils {
 
-	//método para acessar o stage onde o controller que recebeu o evento está
+	// método para acessar o stage onde o controller que recebeu o evento está
 	public static Stage currentStage(ActionEvent event) {
 		return (Stage) ((Node) event.getSource()).getScene().getWindow();
 	}
-	
+
 	public static Integer tryParseInt(String str) {
 		try {
 			return Integer.parseInt(str);
+		} catch (NumberFormatException e) {
+			return null;
 		}
-			catch(NumberFormatException e) {
-				return null;
-			}
 	}
-	
+
 }
